@@ -1,11 +1,18 @@
 package com.andres.api_festivos.model;
 
-import javax.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "festivos")
 public class Festivo {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -16,7 +23,7 @@ public class Festivo {
     @Column(nullable = false)
     private LocalDate fecha;
 
-    public Festivo() {}
+    public Festivo() { }
 
     public Festivo(String nombre, LocalDate fecha) {
         this.nombre = nombre;
